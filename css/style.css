@@ -1,0 +1,529 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'ktf';
+}
+
+/* import af custom fonte */
+
+@font-face {
+    font-family: 'ktf';
+    src: url(../fonts/ktf-roadbrush.ttf);
+}
+
+@font-face {
+    font-family: 'typewriter';
+    src: url(../fonts/american-typewriter-condensed-bold.ttf);
+}
+
+/* laver smooth scroll på bookmark links */
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* custom properties */
+
+:root {
+    --darkgreen: #337871;
+    --white: #EEECE4;
+    --grey: #D1D3D4;
+    --creme: #DBD19C;
+    --floor: #B3A58B;
+
+    --h2: 2rem;
+}
+
+p {
+    font-size: 0.9rem;
+}
+
+header {
+    background-color: var(--darkgreen);
+}
+
+.header-desktop {
+    display: none;
+}
+
+header img {
+    width: 3rem;
+}
+
+header h1 {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+/* burgermenu styling */
+
+#btn {
+    width: 45px;
+    cursor: pointer;
+}
+
+span {
+    display: block;
+    width: 100%;
+    border-radius: 3px;
+    height: 4px;
+    background-color: var(--white);
+    transition: all .3s;
+    position: relative;
+}
+
+span+span {
+    margin-top: .5rem;
+}
+
+/* burgermenu animation */
+
+.active span:nth-child(1) {
+    animation: ease .7s top forwards;
+}
+
+.not-active span:nth-child(1) {
+    animation: ease .7s top-2 forwards;
+}
+
+.active span:nth-child(2) {
+    animation: ease .7s scaled forwards;
+}
+
+.not-active span:nth-child(2) {
+    animation: ease .7s scaled-2 forwards;
+}
+
+.active span:nth-child(3) {
+    animation: ease .7s bottom forwards;
+}
+
+.not-active span:nth-child(3) {
+    animation: ease .7s bottom-2 forwards;
+}
+
+@keyframes top {
+    0% {
+        top: 0;
+        transform: rotate(0);
+    }
+    50% {
+        top: 12px;
+        transform: rotate(0);
+    }
+    100% {
+        top: 12px;
+        transform: rotate(45deg);
+    }
+}
+
+@keyframes top-2 {
+    0% {
+        top: 12px;
+        transform: rotate(45deg);
+    }
+    50% {
+        top: 12px;
+        transform: rotate(0deg);
+    }
+    100% {
+        top: 0;
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes bottom {
+    0% {
+        bottom: 0;
+        transform: rotate(0);
+    }
+    50% {
+        bottom: 12px;
+        transform: rotate(0);
+    }
+    100% {
+        bottom: 12px;
+        transform: rotate(135deg);
+    }
+}
+
+@keyframes bottom-2 {
+    0% {
+        bottom: 12px;
+        transform: rotate(135deg);
+    }
+    50% {
+        bottom: 12px;
+        transform: rotate(0);
+    }
+    100% {
+        bottom: 0;
+        transform: rotate(0);
+    }
+}
+
+@keyframes scaled {
+    50% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes scaled-2 {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* ------------------burger menu end-------------------- */
+
+.logo-none {
+    display: none;
+}
+
+.header-wrapper {
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+}
+
+.header-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+}
+
+.logo-wrapper {
+    width: 3rem;
+    height: 3rem;
+}
+
+.header-wrapper nav ul {
+    background-color: var(--darkgreen);
+    text-align: center;
+    line-height: 2.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.header-wrapper nav ul li a {
+    color: var(--white);
+}
+
+/* vis/skjul burger nav menu */
+
+.nav-item {
+    display: none;
+}
+
+.nav-item[data-visible] {
+    display: block;
+    animation: ease 0.7s mob-nav forwards;
+}
+
+@keyframes mob-nav {
+    0% {
+        transform: translateY(-1%);
+    }
+
+    100% {
+        transform: translateY(-0.1%);
+    }
+}
+
+.hamburger-filler{
+    height: 100vh;
+    width: 100%;
+}
+
+/* section attribute */
+
+.hero, .kaffebaren, .kiosken, .bottleshop, .bag-nabo-kiosk {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+}
+
+h2 {
+    padding-top: 5rem;
+    text-align: center;
+    font-size: var(--h2);
+}
+
+.kiosken p, .bottleshop p {
+    font-family: 'typewriter';
+    margin-inline: auto;
+    padding-top: 0.7rem;
+    text-align: justify;
+}
+
+
+/* hero */
+
+.hero {
+    background-image: url(../img/4x/hero-mobile.png);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+}
+
+.hero img {
+    width: 2rem;
+    animation: 1.2s arrow-jump infinite;
+    z-index: 0;
+}
+
+
+@keyframes arrow-jump {
+    0% {
+        transform: translateY(0%);
+    }
+
+    50% {
+        transform: translateY(-20%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
+.door-bt {
+    margin-top: 2rem;
+    height: 20rem;
+    width: 10rem;
+}
+
+.door-bt a {
+    height: 20rem;
+    width: 10rem;
+}
+/* kaffebaren */
+
+.kaffebaren {
+    background-image: url(../img/4x/kaffebaren-mobile.png);
+}
+
+/* kioksen */
+
+.kiosken {
+    background-image: url(../img/4x/kiosken.png);
+}
+
+.kiosken p {
+    width: 80%;
+}
+
+/* bottleshop */
+
+.bottleshop {
+    background-image: url(../img/4x/bottleshop-mobile.png);
+}
+
+.bottleshop p {
+    width: 17.5rem;
+}
+
+/* den gode nabo */
+
+.nabo-bg-grid {
+    position: relative;
+}
+
+.nabo-wall {
+    height: 85vh;
+    background-color: var(--creme);
+}
+
+.nabo-floor {
+    height: 15vh;
+    background-color: var(--floor);
+}
+
+.nabo-main-wrapper {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+/* decleration of grid-area */
+
+.nabo-main-grid {
+    display: grid;
+    grid-template-areas: 
+    'title title'
+    'tools text'
+    'games games';
+    height: 100vh;
+    max-width: 1024px;
+    margin-inline: auto;
+}
+
+#den-gode-nabo {
+    grid-area: top;
+}
+
+.nabo-door {
+    display: none;
+    grid-area: door;
+}
+
+.games-desktop {
+    display: none;
+}
+
+.nabo-main-grid img {
+    width: 15rem;
+}
+
+.tools {
+    grid-area: tools;
+}
+
+.tools-tablet {
+    display: none;
+}
+
+.tools-desktop {
+    display: none;
+}
+
+.tools img {
+    width: 9rem;
+}
+
+.nabo-title {
+    grid-area: title;
+    text-align: center;
+}
+
+.nabo-title h3 {
+    font-size: 2rem;
+    line-height: 0.9;
+}
+
+.nabo-title h3 strong {
+    font-size: 3.5rem;
+}
+
+.nabo-text {
+    grid-area: text;
+    padding-top: 2rem;
+}
+
+.nabo-text p {
+    text-align: left;
+    font-family: 'typewriter';
+    padding-right: 1rem;
+}
+
+.games {
+    grid-area: games;
+    width: 15rem;
+    margin-right: 0;
+    margin-left: auto;
+    margin-bottom: 1rem;
+    margin-top: auto;
+}
+
+/* bag om */
+
+.bag-nabo-kiosk {
+    background-image: url(../img/4x/bag-om-nabo-kiosk.png);
+}
+
+.bag-nabo-kiosk p {
+    font-size: 1rem;
+    padding-inline: 0.2rem;
+    max-width: 34.175rem;
+    max-height: 25.5rem;
+    font-family: 'typewriter';
+    font-size: 1rem;
+}
+
+.citat {
+    display: none;
+}
+
+.full-citat {
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.bag-text {
+    padding-top: 13vh;
+}
+
+.bag-citat-byline {
+    padding-top: 0.5rem;
+    font-size: 0.6rem;
+    text-align: center;
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 730px;
+    margin-inline: auto;
+}
+
+.bag-nabo-kiosk q {
+    font-family: 'typewriter';
+    text-align: left;
+}
+
+/* footer */
+
+footer {
+    background-color: var(--darkgreen);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+}
+
+footer img {
+    width: 8rem;
+}
+
+footer h3 {
+    color: var(--white);
+    text-align: center;
+    font-family: 'typewriter';
+    padding-top: 1rem;
+    font-size: 1.8rem;
+}
+
+footer h4 {
+    color: var(--white);
+    text-align: center;
+    font-family: 'typewriter';
+    padding-top: 0.5rem;
+}
+
+.so-me img {
+    width: 4rem;
+}
+
+.so-me img:hover {
+    opacity: 0.8;
+}
+
+.so-me {
+    display: flex;
+    gap: 1rem;
+    padding-block: 1rem;
+}

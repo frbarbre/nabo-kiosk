@@ -1,0 +1,155 @@
+/* responsive styles for tablet size */
+@media screen and (min-width: 480px) {
+   
+    .kiosken p {
+        width: 50%;
+    }
+
+    .nabo-mob-title {
+        display: none;
+    }
+
+    .nabo-desktop-title {
+        display: block;
+        text-align: center;
+    }
+
+    .nabo-title {
+        padding-top: 0rem;
+    }
+
+    .nabo-text {
+        padding: 2rem 2rem 0 2rem;
+        font-size: 1rem;
+    }
+
+    .tools img {
+        width: 10rem;
+    }
+
+    .tools-tablet {
+        display: block;
+    }
+
+    .tools-mob {
+        display: none;
+    }
+}
+
+/* responsive styles for laptop size */
+@media screen and (min-width: 768px) {
+
+    .left {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .right {
+        display: flex;
+        align-items: center;
+        
+    }
+
+    .right ul {
+        display: flex;
+        gap: 1.3rem;
+    }
+
+    .right ul li a {
+        color: var(--white);
+    }
+
+    .citat {
+        display: block;
+    }
+
+    .bag-text {
+       padding-top: 14.5vh;
+    }
+}
+
+/* responsive styles for desktop size */
+@media screen and (min-width: 1024px) {
+    
+    .header-mobile {
+        display: none;
+    }
+
+    .header-desktop {
+        display: flex;
+        position: fixed;
+        width: 100%;
+        z-index: 3;
+        justify-content: space-between;
+        padding: 0.5rem;
+    }
+
+    .header-desktop nav ul li a:hover {
+        opacity: 0.8;
+    }
+
+    .logo-wrapper img:hover {
+        opacity: 0.8;
+    }
+
+    .bag-nabo-kiosk p {
+        font-size: 0.8rem;
+    }
+
+    .bag-text {
+        padding-top: 7.5vh;
+    }
+
+    .kaffebaren {
+        background-image: url(../img/4x/kaffebaren-desktop.png);
+    }
+
+    .nabo-main-grid {
+        grid-template-areas: 
+        'title title title'
+        'door tools text'
+        'door games games';
+        column-gap: 2rem;
+    }
+
+    .nabo-door {
+        display: block;
+        margin-bottom: 14.5vh;
+        margin-top: auto;
+        padding-left: 2rem;
+        overflow: visible;
+    }
+
+    .nabo-door img {
+        height: 60vh;
+        width: 100%;
+    }
+
+    .tools-tablet {
+        display: none;
+    }
+
+    .tools-desktop {
+        display: block;
+    }
+
+    .games-mob {
+        display: none;
+    }
+
+    .games-desktop {
+        display: block;
+    }
+
+    .games {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        padding-right: 3rem;
+    }
+
+    p {
+        font-size: 0.6rem;
+    }
+}

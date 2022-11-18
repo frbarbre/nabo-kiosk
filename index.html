@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- viewport-fit=cover fylder hele viewporten ud på mobil -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Nabo Kiosk</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-responsive.css">
+    <link rel="shortcut icon" href="img/4x/favicon.ico" type="image/x-icon">
+
+    <!-- defer gør at browseren læse js synkront med alt andet og køre scriptet efter indlæsning, hvilket gør det muligt at placere henvisingen i <head> -->
+    <script src="js/main.js" defer></script>
+</head>
+<body>
+    <!-- Header tilegnet til mobil -->
+    <div class="header-wrapper">
+        <header class="header-mobile">
+            <!-- wrapper der holder på to logoer, der med js bliver skjult og vist alt efter om burgermenuen er åben eller lukket -->
+            <figure class="logo-wrapper">
+                <a href="#" class="logo-none logo-opened-toggle" id="logo-open-btn"><img src="img/4x/nabo-kiosk-header-logo.png" alt="Nabo Kiosk Logo"></a>
+                <a href="#" class="logo-closed logo-closed-toggle" id="logo-closed-btn"><img src="img/4x/nabo-kiosk-header-logo.png" alt="Nabo Kiosk Logo"></a>
+            </figure>
+            <article>
+                <a href="#"><h1>NABO KIOSK</h1></a>
+            </article>
+            <!-- burgermenu konstrueret af 3 spans, class=not-active og id=btn, bruges i js til aktivere animation onClick -->
+            <figure class="mobile-nav hamburger-none not-active" id="btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </figure>
+        </header>
+        <!-- nav, der indeholder det indhold der vises når burgermenuen aktiveres -->
+        <nav class="nav-item">
+            <ul>
+                <!-- .###-toggle classene sørger for at menuen lukker når brugen trykker på et menupunkt, ved brug af js. -->
+                <li><a href="#kaffebaren" class="kaffebaren-toggle">KAFFEBAREN</a></li>
+                <li><a href="#kiosken" class="kiosken-toggle">KIOSKEN</a></li>
+                <li><a href="#bottleshop" class="bottleshop-toggle">BOTTLESHOP</a></li>
+                <li><a href="#den-gode-nabo" class="den-gode-nabo-toggle">DEN GODE NABO</a></li>
+                <li><a href="#bag-nabo-kiosk" class="bag-nabo-kiosk-toggle">BAG NABO KIOSK</a></li>
+                <li><a href="#kontakt" class="kontakt-toggle">KONTAKT</a></li>
+            </ul>
+            <!-- en tom boks der ligger under .nav-item som brugeren kan trykke så menuen lukker.-->
+            <figure class="hamburger-filler"></figure>
+        </nav>
+    </div>
+
+    <!-- header tilegnet desktop -->
+
+    <header class="header-desktop">
+        <figure class="left">
+            <figure class="logo-wrapper">
+                <a href="index.html"><img src="img/4x/nabo-kiosk-header-logo.png" alt="Nabo Kiosk Logo"></a>
+            </figure>
+            <h1>NABO KIOSK</h1>
+        </figure>
+        <nav class="right">
+            <ul>
+                <li><a href="#kaffebaren">KAFFEBAREN</a></li>
+                <li><a href="#kiosken">KIOSKEN</a></li>
+                <li><a href="#bottleshop">BOTTLESHOP</a></li>
+                <li><a href="#den-gode-nabo">DEN GODE NABO</a></li>
+                <li><a href="#bag-nabo-kiosk">BAG NABO KIOSK</a></li>
+                <li><a href="#kontakt">KONTAKT</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <!-- section der primært består af et baggrundbillede (defineret i CSS) og en flex container, med flex-direction: column; -->
+        <section class="hero">
+            <div></div>
+            <a class="door-bt" href="#kaffebaren"></a>
+            <a href="#kaffebaren"><img src="img/4x/arrow-down.png" alt="arrow-down"></a>
+        </section>
+        
+        <!-- infographic med en overskrift og baggrundsbillede -->
+        <section class="kaffebaren" id="kaffebaren">  
+            <h2>KAFFEBAREN</h2>
+        </section>
+
+        <!-- section med baggrundsbillede -->
+        <section class="kiosken" id="kiosken">
+            <h2>KIOSKEN</h2>
+            <p>
+                I vores Kiosk finder du lidt af hvert, men særligt er der fokus på at vække dine barndomsminder. Savner du måske et Jenka tyggegummi, rustne søm eller den næsten ulovlige lakridspibe? Der findes masser til den søde tand, men udvalget byder også på specialiteter, som ikke kan findes i dit alm. supermarked. 
+                <br>
+                Sortimentet på hylderne i vores kiosk variere hele tiden. Men vi garantere at der nok skal være noget til enhvers smag. Kig ind forbi vores hyggelige kiosk, den er åben for både de handlende og for os der bare snupper et nostalgitrip på vejen. 
+            </p>
+        </section>
+
+        <!-- infographic med en overskrift og baggrundsbillede -->
+        <section class="bottleshop" id="bottleshop">
+            <h2>BOTTLESHOP</h2>
+        </section>
+        
+        <!-- den gode nabo section, hvor vi bruger grid-area til at lave layoutet dynamisk -->
+        <section class="den-gode-nabo" id="den-gode-nabo">
+        <section class="nabo-bg-grid">
+            <!-- container der farver gulv og loft -->
+            <div class="nabo-wall"></div>
+            <div class="nabo-floor"></div>
+
+            <!-- wrapper der indeholder alt content og er positioneret absolut -->
+            <div class="nabo-main-wrapper">
+                <!-- container hvor vi opretter grid-area på -->
+                <section class="nabo-main-grid">
+                    <figure class="tools">
+                        <!-- wrapper der indeholder alle udgaver af tools -->
+                        <div class="tools-wrapper">
+                            <img class="tools-mob" src="img/4x/tools-mobile@2x.png" alt="">
+                            <img class="tools-tablet" src="img/4x/tools-tablet@2x.png" alt="">
+                            <img class="tools-desktop" src="img/4x/tools-desktop@2x.png" alt="">
+                        </div> 
+                    </figure>
+                    <article class="nabo-title">
+                        <h2>DEN GODE NABO</h2>
+                    </article>
+                    <article class="nabo-text">
+                        <p>Mangler du pludselig en hammer, eller måske endda en boremaskine? Så kig ind forbi din Nabokiosk. Vi låner gerne ud til alle vores søde naboer. Vi gemmer på lidt af hvert, og du er altid velkommen til at spørge de ansatte, hvis du ikke kan se det du skulle mangle. 
+                        <br>
+                        <br>
+                        Til de hyggelige sommeraftener er du også velkommen til at låne petanque eller nogle af vores andre udendørs spil. Hos os skal du må du låne løs, og bare rolig, det er ganske gratis.</p>
+                    </article>
+                    <figure class="games">
+                        <!-- wrapper der indeholder alle udgaver af games -->
+                        <div class="games-wrapper">
+                            <img class="games-mob" src="img/4x/kongespil-tablet-mobile@2x.png" alt="">
+                            <img class="games-desktop" src="img/4x/kongespil-desktop@2x.png" alt="">
+                        </div>
+                    </figure>
+                    <figure class="nabo-door">
+                        <div class="door-wrapper">
+                            <img src="img/4x/door-desktop@2x.png" alt="">
+                        </div>
+                    </figure>
+                </section>
+            </div>            
+        </section>
+        </section>
+
+        <!-- section med baggrundsbillede -->
+        <section class="bag-nabo-kiosk" id="bag-nabo-kiosk">
+            <h2>BAG NABO KIOSK</h2>
+            <div class="content-wrapper">
+                <div></div>
+                <article>
+                    <p class="bag-text">
+                        Nabokiosk midt på Ingerslevs Plads, ønsker at genskabe det gode naboskab i byen. Vi er en kiosk, kaffebar, spisested og bootleshop. Men vigtigst af alt, et samlingssted for alle aarhusianer. Her er noget til enhver person, til enhver pris. På hylderne finder du fredagsslik der vækker nostalgien i 90’er barnet, niche-vine, kolonial, specialøl, livsstils- og designvarer samt en masse andet. Her vejer det sociale højt, så kom forbi din nabo og oplev den gode stemning.
+                    </p>
+
+                    <p class="full-citat citat">
+                        <!-- <q> laver quotation marks -->
+                        <q>Vi er tre venner som alle kommer fra området, men vi syntes her manglede et samlingssted i dette område, og så håbede vi at kunne trække det gode naboskab, vi kender fra forstæderne, tilbage til midtbyen</q>
+                    </p>
+                    <p class="bag-citat-byline citat">Steffen Zeuthen Therkildsen, medejer af Nabo Kiosk</p>
+                </article>
+            </div>
+        </section>
+    </main>
+    
+    <!-- footer -->
+    <footer id="kontakt">
+        <article class="opening-hours">
+            <h3>Åbningstider</h3>
+            <h4>Mandag - Fredag: 08:00 - 18:00</h4>
+            <h4>Lørdag - Søndag: 08:30 - 18:00</h4>
+        </article>
+        <article class="adress">
+            <h3>Adresse</h3>
+            <h4>Ingerslevs Plads 1a<br>8000 Aarhus<br>Danmark</h4>
+        </article>
+        <section class="so-me">
+            <!-- target="_blank" for at åbne link i ny fane -->
+            <figure><a href="https://www.facebook.com/nabokiosk" target="_blank"><img src="img/4x/facebook.png" alt="some facebook"></a></figure>
+            <figure><a href="https://www.instagram.com/nabokiosk/" target="_blank"><img src="img/4x/instagram.png" alt="some instagram"></a></figure>
+        </section>
+    </footer>
+
+</body>
+</html>
